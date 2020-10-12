@@ -37,10 +37,14 @@ class HomeTableViewCell: UITableViewCell {
                 
         self.createdAtLabel.text = formattedDateInString
         
-        if idea.favorites.contains((Auth.auth().currentUser?.email) ?? "") {
-            self.iconImageView.image = UIImage.init(named: "favorite_cell_Bar_act")
+        if idea.createdBy == (Auth.auth().currentUser?.email) ?? "" {
+            self.iconImageView.image = nil
         } else {
-            self.iconImageView.image = UIImage.init(named: "favorite_cell_Bar")
+            if idea.favorites.contains((Auth.auth().currentUser?.email) ?? "") {
+                self.iconImageView.image = UIImage.init(named: "favorite_cell_Bar_act")
+            } else {
+                self.iconImageView.image = UIImage.init(named: "favorite_cell_Bar")
+            }
         }
     }
     
