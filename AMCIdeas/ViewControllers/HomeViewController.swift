@@ -104,7 +104,7 @@ extension HomeViewController : UITableViewDelegate {
 
 extension HomeViewController : IdeaCreateDelegate {
     func didPressedSaveIdea(title: String, sortDescription: String, description: String) {
-        let idea = Idea.init(title: title, sortDescription: sortDescription, description: description, createdBy: self.user.email, createdAt: 0, updatedAt: 0, favorites: ["shaheen@gmail.com"])
+        let idea = Idea.init(title: title, sortDescription: sortDescription, description: description, createdBy: self.user.email, createdAt: 0, updatedAt: 0, favorites: [])
         
         let ideaRef = self.ref.child("idea-\(items.count + 1)")
         
